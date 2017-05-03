@@ -1,11 +1,10 @@
-FROM nginx:1.11.13
-MAINTAINER Jason Wilder mail@jasonwilder.com
-
+FROM resin/rpi-raspbian:latest
+MAINTAINER Julien Ancelin
 # Install wget and install/updates certificates
 RUN apt-get update \
  && apt-get install -y -q --no-install-recommends \
     ca-certificates \
-    wget \
+    wget nginx \
  && apt-get clean \
  && rm -r /var/lib/apt/lists/*
 
